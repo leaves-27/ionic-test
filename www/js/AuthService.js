@@ -1,4 +1,4 @@
-module.exports =  function ($http, Session) {
+var AuthService =  function ($http, Session) {
   var authService = {};
   authService.login = function (credentials) {
     return $http

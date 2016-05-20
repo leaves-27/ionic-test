@@ -1,4 +1,4 @@
-module.exports = function ($rootScope, $q,AUTH_EVENTS) {
+var AuthInterceptor = function ($rootScope, $q,AUTH_EVENTS) {
   return {
     responseError: function (response) { 
       $rootScope.$broadcast({

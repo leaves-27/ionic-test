@@ -1,4 +1,4 @@
-module.exports = function () {
+var Session = function () {
   this.create = function (sessionId, userId, userRole) {
     this.id = sessionId;
     this.userId = userId;
