@@ -1,4 +1,4 @@
-var angular = require("angular");
+require("../lib/ionic/js/angular/angular");
 var login = require("./login/LoginController");
 
 var run = require("./run");
@@ -38,3 +38,5 @@ app.factory('AuthService',AuthService);
 app.service('Session',Session);
 //
 app.directive('loginDialog',loginDialog);
+
+module.exports = app;

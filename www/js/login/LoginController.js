@@ -1,4 +1,4 @@
-var angular = require("angular");
+require("../../lib/ionic/js/angular/angular");
 var app = angular.module('login',['']);
 
 app.controller('LoginController', function ($scope, $rootScope, AUTH_EVENTS, AuthService) {
