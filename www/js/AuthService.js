@@ -6,7 +6,6 @@ var AuthService =  function ($http, Session) {
     return $http
       .post(urlPrefix+'/login', credentials)
       .then(function (res){
-        console.log("res111:");
         Session.create(res.data.id, res.data.user.id,res.data.user.role);
         return res.data.user;
       });
@@ -19,8 +18,7 @@ var AuthService =  function ($http, Session) {
     if (!angular.isArray(authorizedRoles)) {
       authorizedRoles = [authorizedRoles];
     }
-    return (authService.isAuthenticated() &&
-      authorizedRoles.indexOf(Session.userRole) !== -1);
+    return (authService.isAuthenticated() && authorizedRoles.indexOf(Session.userRole) !== -1);
   };
   return authService;
 }

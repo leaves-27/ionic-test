@@ -15,15 +15,16 @@ var run =  function($ionicPlatform,$rootScope, AUTH_EVENTS, AuthService){
     }
   });
   $rootScope.$on('$stateChangeStart', function (event, next) {
-    
     var authorizedRoles = next.data.authorizedRoles;
-    if (!AuthService.isAuthorized(authorizedRoles)) {
-      event.preventDefault();
+    console.log(next);
+
+    if(!AuthService.isAuthorized(authorizedRoles)) {
+      //event.preventDefault();
       if (AuthService.isAuthenticated()) {
-        // 用户没有访问权限
+        // user is not allowed
         $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
       } else {
-        // 用户没有登录
+        // user is not logged in
         $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
       }
     }
