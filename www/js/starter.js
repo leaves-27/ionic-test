@@ -28,5 +28,5 @@ app.factory('AuthInterceptor',AuthInterceptor);
 app.factory('AuthService',AuthService);
 //Session管理
 app.service('Session',Session);
-//
+//session超时的重新登录框
 app.directive('loginDialog',loginDialog);

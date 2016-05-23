@@ -35,6 +35,7 @@
     <script src="./js/starter.js"></script>
   </head>
   <body ng-app="starter" ng-controller="ApplicationController">
+    <div login-dialog ng-if="!isLoginPage"></div>
     <div ui-view=""></div>
   </body>
 </html>
