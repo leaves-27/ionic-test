@@ -29,3 +29,32 @@ http://www.tuicool.com/articles/2qiE7jN
 # 解决访问权限的分配
 # 快递单号的扫描
 # 身份证信息的扫描
+
+
+login:view、controller
+   登陆成功后：
+   1.向全局广播成功事件；
+   2.设置当前用户；
+   登陆失败后：
+   1.向全局广播失败事件
+AuthService：
+  isAuthenticated：通过认证。在Session中存在用户id即通过认证。
+  isAuthorized：授权。通过认证，并且当前用户的角色在授权角色中。
+Session:由后端生成
+  id:
+  userId:
+  userRole:
+
+
+
+
+
+
+
+
+
+
+
+
+
+

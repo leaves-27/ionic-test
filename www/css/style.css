@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+html,body{height: 100%;}
+
+.content input{margin-left:10px;}
+.main .img-frame{text-align:center;padding: 20px;}
+.main .notice{text-align: center;color:#000;display: block;text-decoration: none;font-size: 12px;}
+.main .notice:hover{text-decoration: underline;}
+.main .list{border-top: 1px solid #ddd;}

@@ -1,4 +1,4 @@
-var run =  function($ionicPlatform,$rootScope){
+var run =  function($ionicPlatform,$rootScope, AUTH_EVENTS, AuthService){
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -14,18 +14,18 @@ var run =  function($ionicPlatform,$rootScope){
       StatusBar.styleDefault();
     }
   });
-
-  // $rootScope.$on('$stateChangeStart', function (event, next) {
-  //   var authorizedRoles = next.data.authorizedRoles;
-  //   if (!AuthService.isAuthorized(authorizedRoles)) {
-  //     event.preventDefault();
-  //     if (AuthService.isAuthenticated()) {
-  //       // 用户没有访问权限
-  //       $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
-  //     } else {
-  //       // 用户没有登录
-  //       $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
-  //     }
-  //   }
-  // });
+  $rootScope.$on('$stateChangeStart', function (event, next) {
+    
+    var authorizedRoles = next.data.authorizedRoles;
+    if (!AuthService.isAuthorized(authorizedRoles)) {
+      event.preventDefault();
+      if (AuthService.isAuthenticated()) {
+        // 用户没有访问权限
+        $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+      } else {
+        // 用户没有登录
+        $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+      }
+    }
+  });
 }

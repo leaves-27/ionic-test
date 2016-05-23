@@ -1,7 +1,7 @@
 var loginDialog = function (AUTH_EVENTS) {
   return {
     restrict: 'A',
-    template: '<div ng-if="visible" ng-include="\'login-form.html\'">',
+    template: '<div ng-if="visible" ng-include="\'../html/login.html\'">',
     link: function (scope) {
       var showDialog = function () {
         scope.visible = true;

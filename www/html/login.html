@@ -1,7 +1,18 @@
-<form name="loginForm" ng-controller="LoginController" ng-submit="login(credentials)" novalidate>
-  <label for="username">Username:</label>
-  <input type="text" id="username" ng-model="credentials.username">
-  <label for="password">Password:</label>
-  <input type="password" id="password" ng-model="credentials.password">
-  <button type="submit">Login</button>
+<div class="bar bar-header">
+  <div class="h1 title">登录</div>
+</div>
+<form class="content has-header" name="loginForm" ng-submit="login(credentials)" novalidate>
+  <div class="list">
+  	<label class="item item-input">
+  		用户名:
+	  	<input id="username"  type="text" placeholder="请输入用户名" ng-model="credentials.username">
+  	</label>
+  	<label class="item item-input">
+  		密&nbsp;&nbsp;&nbsp;码: 
+		  <input id="password" type="password" placeholder="请输入密码" ng-model="credentials.password">
+  	</label>
+  </div>
+  <div class="padding">
+  	<button class="button button-block button-positive" type="submit">登录</button>
+  </div>
 </form>
